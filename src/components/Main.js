@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/main.css';
+import '../styles/Main.css';
+import CV from './CV';
+import InputForm from './InputForm';
 
 class Main extends React.Component {
   constructor() {
@@ -20,7 +22,12 @@ class Main extends React.Component {
     };
   }
   render() {
-    return <div></div>;
+    return (
+      <div className='main'>
+        <CV />
+        <InputForm />
+      </div>
+    );
   }
 }
 

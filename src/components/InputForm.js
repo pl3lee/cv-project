@@ -10,7 +10,7 @@ class InputForm extends React.Component {
       <div className="input-form">
         <InputFormSection
           section={'personalInfo'}
-          onChange={this.props.onChange}
+          onChange={this.props.onChange.personalInfo}
         />
         <InputFormSection section={'experience'} />
         <InputFormSection section={'education'} />

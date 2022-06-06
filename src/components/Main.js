@@ -17,15 +17,41 @@ class Main extends React.Component {
         email: '',
         description: '',
       },
-      experiences: [],
-      educations: [],
     };
   }
+  handlers = {
+    handleFirstNameChange: (name) => {
+      this.setState({ firstName: name });
+      console.log(this.state);
+    },
+    handleLastNameChange: (name) => {
+      this.setState({ lastName: name });
+    },
+    handleTitleChange: (newTitle) => {
+      this.setState({ title: newTitle });
+    },
+    handlePhotoChange: (newPhoto) => {
+      this.setState({ photo: newPhoto });
+    },
+    handleAddressChange: (newAddress) => {
+      this.setState({ address: newAddress });
+    },
+    handlePhoneNumberChange: (number) => {
+      this.setState({ phoneNumber: number });
+    },
+    handleEmailChange: (newEmail) => {
+      this.setState({ email: newEmail });
+    },
+    handleDescriptionChange: (desc) => {
+      this.setState({ description: desc });
+    },
+  };
+
   render() {
     return (
-      <div className='main'>
+      <div className="main">
         <CV />
-        <InputForm />
+        <InputForm onChange={this.handlers} />
       </div>
     );
   }

@@ -21,29 +21,68 @@ class Main extends React.Component {
   }
   handlers = {
     handleFirstNameChange: (name) => {
-      this.setState({ firstName: name });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.firstName = name;
+        return { personalInfo };
+      });
       console.log(this.state);
     },
     handleLastNameChange: (name) => {
-      this.setState({ lastName: name });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.lastName = name;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handleTitleChange: (newTitle) => {
-      this.setState({ title: newTitle });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.title = newTitle;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handlePhotoChange: (newPhoto) => {
-      this.setState({ photo: newPhoto });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.photo = newPhoto;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handleAddressChange: (newAddress) => {
-      this.setState({ address: newAddress });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.address = newAddress;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handlePhoneNumberChange: (number) => {
-      this.setState({ phoneNumber: number });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.PhoneNumber = number;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handleEmailChange: (newEmail) => {
-      this.setState({ email: newEmail });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.email = newEmail;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
     handleDescriptionChange: (desc) => {
-      this.setState({ description: desc });
+      this.setState((prevState) => {
+        let personalInfo = Object.assign({}, prevState.personalInfo);
+        personalInfo.description = desc;
+        return { personalInfo };
+      });
+      console.log(this.state);
     },
   };
 

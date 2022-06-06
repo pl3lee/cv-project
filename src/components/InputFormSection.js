@@ -40,7 +40,7 @@ class InputFormSection extends React.Component {
   render() {
     if (this.props.section === 'personalInfo') {
       return (
-        <div className="personal-info">
+        <div className="personal-info input-form-section">
           Personal Information
           <input
             placeholder="First name"

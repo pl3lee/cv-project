@@ -24,5 +24,19 @@
   border: transparent;
 }
 
+.input-form-section > button {
+  height: 35px;
+  border: transparent;
+  font-weight: bold;
+  color: white;
+}
+
+.input-form-section > button.delete {
+  background-color: red;
+}
+.input-form-section > button.add {
+  background-color: green;
+}
+
 
 

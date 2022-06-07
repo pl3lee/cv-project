@@ -6,6 +6,7 @@ class Experience {
     this.country = '';
     this.from = '';
     this.to = '';
+    this.description = '';
   }
 }
 

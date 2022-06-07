@@ -68,7 +68,7 @@ class Main extends React.Component {
       handlePhoneNumberChange: (number) => {
         this.setState((prevState) => {
           let personalInfo = Object.assign({}, prevState.personalInfo);
-          personalInfo.PhoneNumber = number;
+          personalInfo.phoneNumber = number;
           return { personalInfo };
         });
         console.log(this.state);
@@ -97,7 +97,10 @@ class Main extends React.Component {
     return (
       <div className="main">
         <CV />
-        <InputForm onChange={this.handlers} />
+        <InputForm
+          onChange={this.handlers}
+          experiences={this.state.experiences}
+        />
       </div>
     );
   }

@@ -54,36 +54,47 @@ class InputFormSection extends React.Component {
             placeholder="First name"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.firstName}
           ></input>
           <input
             placeholder="Last name"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.lastName}
           ></input>
           <input
             placeholder="Title"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.title}
           ></input>
-          <input type="file" onChange={this.handlePersonalInfoChange}></input>
+          <input
+            type="file"
+            onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.photo}
+          ></input>
           <input
             placeholder="Address"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.address}
           ></input>
           <input
             placeholder="Phone number"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.phoneNumber}
           ></input>
           <input
             placeholder="Email"
             type="text"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.email}
           ></input>
           <textarea
             placeholder="Description"
             onChange={this.handlePersonalInfoChange}
+            value={this.props.personalInfo.description}
           ></textarea>
         </div>
       );
@@ -133,7 +144,6 @@ class InputFormSection extends React.Component {
             onChange={this.handleExperienceChange}
           ></textarea>
           <button className="delete">Delete</button>
-          <button className="add">Add</button>
         </div>
       );
     } else if (this.props.section === 'education') {

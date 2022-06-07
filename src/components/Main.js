@@ -9,7 +9,7 @@ import uniqid from 'uniqid';
 class Main extends React.Component {
   constructor() {
     super();
-    this.state = {
+    this.defaultState = {
       personalInfo: {
         firstName: '',
         lastName: '',
@@ -20,9 +20,10 @@ class Main extends React.Component {
         email: '',
         description: '',
       },
-      experiences: [new Experience(uniqid()), new Experience(uniqid())],
+      experiences: [new Experience(uniqid())],
       education: [new Education()],
     };
+    this.state = this.defaultState;
   }
   handlers = {
     personalInfo: {
@@ -185,14 +186,31 @@ class Main extends React.Component {
       },
     },
   };
-
+  addExperience = () => {
+    this.setState((prevState) => {
+      return {
+        experiences: [...prevState.experiences, new Experience(uniqid())],
+      };
+    });
+  };
+  resetForm = () => {
+    this.setState(this.defaultState);
+    this.setState({
+      experiences: [new Experience(uniqid())],
+      education: [new Education()],
+    });
+    console.log(this.state);
+  };
   render() {
     return (
       <div className="main">
         <CV />
         <InputForm
           onChange={this.handlers}
+          personalInfo={this.state.personalInfo}
           experiences={this.state.experiences}
+          addExperience={this.addExperience}
+          resetForm={this.resetForm}
         />
       </div>
     );

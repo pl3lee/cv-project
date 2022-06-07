@@ -13,7 +13,15 @@ class InputForm extends React.Component {
           onChange={this.props.onChange.personalInfo}
         />
         {this.props.experiences.map((exp) => {
-          return <InputFormSection section={'experience'} experience={exp} />;
+          return (
+            <InputFormSection
+              section={'experience'}
+              experience={exp}
+              key={exp.id}
+              id={exp.id}
+              onChange={this.props.onChange.experience}
+            />
+          );
         })}
         <InputFormSection section={'education'} />
         <button>Reset</button>

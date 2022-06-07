@@ -4,6 +4,7 @@ import CV from './CV';
 import InputForm from './InputForm';
 import Experience from './experience';
 import Education from './education';
+import uniqid from 'uniqid';
 
 class Main extends React.Component {
   constructor() {
@@ -19,7 +20,7 @@ class Main extends React.Component {
         email: '',
         description: '',
       },
-      experiences: [new Experience()],
+      experiences: [new Experience(uniqid()), new Experience(uniqid())],
       education: [new Education()],
     };
   }
@@ -90,7 +91,99 @@ class Main extends React.Component {
         console.log(this.state);
       },
     },
-    experience: {},
+    experience: {
+      handleCompanyChange: (company, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.company = company;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handlePositionChange: (position, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.position = position;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleCityChange: (city, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.city = city;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleCountryChange: (country, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.country = country;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleFromChange: (from, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.from = from;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleToChange: (to, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.to = to;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleDescriptionChange: (description, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.experiences.length; i++) {
+            if (prevState.experiences[i].id === id) {
+              let newExp = Object.assign({}, prevState.experiences[i]);
+              newExp.description = description;
+              prevState.experiences[i] = newExp;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+    },
   };
 
   render() {

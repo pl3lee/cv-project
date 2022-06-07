@@ -27,19 +27,22 @@ class InputFormSection extends React.Component {
 
   handleExperienceChange = (e) => {
     if (e.target.placeholder === 'Company Name') {
-      this.props.onChange.handleFirstNameChange(e.target.value);
+      this.props.onChange.handleCompanyChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'Position') {
-      this.props.onChange.handleLastNameChange(e.target.value);
+      this.props.onChange.handlePositionChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'City') {
-      this.props.onChange.handleTitleChange(e.target.value);
+      this.props.onChange.handleCityChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'Country') {
-      this.props.onChange.handleAddressChange(e.target.value);
+      this.props.onChange.handleCountryChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'From') {
-      this.props.onChange.handlePhoneNumberChange(e.target.value);
+      this.props.onChange.handleFromChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'To') {
-      this.props.onChange.handleEmailChange(e.target.value);
+      this.props.onChange.handleToChange(e.target.value, this.props.id);
     } else if (e.target.placeholder === 'Description') {
-      this.props.onChange.handleDescriptionChange(e.target.value);
+      this.props.onChange.handleDescriptionChange(
+        e.target.value,
+        this.props.id
+      );
     }
   };
   render() {
@@ -92,35 +95,42 @@ class InputFormSection extends React.Component {
             placeholder="Company Name"
             type="text"
             value={this.props.experience.company}
+            onChange={this.handleExperienceChange}
           ></input>
           <input
             placeholder="Position"
             type="text"
             value={this.props.experience.position}
+            onChange={this.handleExperienceChange}
           ></input>
           <input
             placeholder="City"
             type="text"
             value={this.props.experience.city}
+            onChange={this.handleExperienceChange}
           ></input>
           <input
             placeholder="Country"
             type="text"
             value={this.props.experience.country}
+            onChange={this.handleExperienceChange}
           ></input>
           <input
             placeholder="From"
             type="text"
             value={this.props.experience.from}
+            onChange={this.handleExperienceChange}
           ></input>
           <input
             placeholder="To"
             type="text"
             value={this.props.experience.to}
+            onChange={this.handleExperienceChange}
           ></input>
           <textarea
             placeholder="Description"
             value={this.props.experience.description}
+            onChange={this.handleExperienceChange}
           ></textarea>
           <button className="delete">Delete</button>
           <button className="add">Add</button>

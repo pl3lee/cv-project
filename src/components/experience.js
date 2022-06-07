@@ -1,5 +1,5 @@
 class Experience {
-  constructor() {
+  constructor(id) {
     this.company = '';
     this.position = '';
     this.city = '';
@@ -7,6 +7,7 @@ class Experience {
     this.from = '';
     this.to = '';
     this.description = '';
+    this.id = id;
   }
 }
 

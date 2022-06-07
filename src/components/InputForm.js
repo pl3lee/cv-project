@@ -2,9 +2,6 @@ import React from 'react';
 import '../styles/InputForm.css';
 import InputFormSection from './InputFormSection';
 class InputForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="input-form">
@@ -44,6 +41,7 @@ class InputForm extends React.Component {
           Add Education
         </button>
         <button onClick={this.props.resetForm}>Reset</button>
+        <button onClick={this.props.loadExample}>Load Example</button>
       </div>
     );
   }

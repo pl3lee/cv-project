@@ -23,6 +23,49 @@ class Main extends React.Component {
       experiences: [new Experience(uniqid())],
       education: [new Education(uniqid())],
     };
+    let exampleExperience1 = new Experience(uniqid());
+    exampleExperience1.company = 'Google';
+    exampleExperience1.position = 'CEO';
+    exampleExperience1.city = 'California';
+    exampleExperience1.country = 'United States';
+    exampleExperience1.from = '2019';
+    exampleExperience1.to = 'Present';
+    exampleExperience1.description =
+      'Blah blah random description of what I did.';
+
+    let exampleExperience2 = new Experience(uniqid());
+    exampleExperience2.company = 'Tesla';
+    exampleExperience2.position = 'CEO';
+    exampleExperience2.city = 'California';
+    exampleExperience2.country = 'United States';
+    exampleExperience2.from = '2005';
+    exampleExperience2.to = '2018';
+    exampleExperience2.description =
+      'Blah blah random description of what I did.';
+    let exampleEducation1 = new Education(uniqid());
+    exampleEducation1.name = 'University of Waterloo';
+    exampleEducation1.city = 'Waterloo';
+    exampleEducation1.country = 'Canada';
+    exampleEducation1.degree = 'Undergraduate';
+    exampleEducation1.major = 'Computational Mathematics';
+    exampleEducation1.minor = 'Computer Science';
+    exampleEducation1.from = '2020';
+    exampleEducation1.to = '2025';
+    this.example = {
+      personalInfo: {
+        firstName: 'John',
+        lastName: 'Smith',
+        title: 'Software Developer',
+        photo: '',
+        address: '99 Random Address, Markham, Canada',
+        phoneNumber: '+1 (123) 456-7890',
+        email: 'example@gmail.com',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      },
+      experiences: [exampleExperience1, exampleExperience2],
+      education: [exampleEducation1],
+    };
     this.state = this.defaultState;
   }
   handlers = {
@@ -330,20 +373,28 @@ class Main extends React.Component {
     });
     console.log(this.state);
   };
+  loadExample = () => {
+    this.setState(this.example);
+  };
   render() {
     return (
       <div className="main">
-        <CV />
+        <CV
+          personalInfo={this.state.personalInfo}
+          experiences={this.state.experiences}
+          education={this.state.education}
+        />
         <InputForm
           onChange={this.handlers}
           personalInfo={this.state.personalInfo}
           experiences={this.state.experiences}
-          addExperience={this.addExperience}
           education={this.state.education}
+          addExperience={this.addExperience}
           deleteExperience={this.deleteExperience}
           addEducation={this.addEducation}
           deleteEducation={this.deleteEducation}
           resetForm={this.resetForm}
+          loadExample={this.loadExample}
         />
       </div>
     );

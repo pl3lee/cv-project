@@ -21,7 +21,9 @@ class InputFormSection extends React.Component {
     } else if (e.target.placeholder === 'Description') {
       this.props.onChange.handleDescriptionChange(e.target.value);
     } else {
-      this.props.onChange.handlePhotoChange(e.target.value);
+      this.props.onChange.handlePhotoChange(
+        e.target.files[0] ? e.target.files[0] : null
+      );
     }
   };
 
@@ -99,7 +101,8 @@ class InputFormSection extends React.Component {
           <input
             type="file"
             onChange={this.handlePersonalInfoChange}
-            value={this.props.personalInfo.photo}
+            // value={this.props.personalInfo.photo}
+            accept="image/*"
           ></input>
           <input
             placeholder="Address"

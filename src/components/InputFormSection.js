@@ -45,6 +45,11 @@ class InputFormSection extends React.Component {
       );
     }
   };
+
+  deleteExperience = () => {
+    this.props.deleteExperience(this.props.id);
+    console.log(this.props.id);
+  };
   render() {
     if (this.props.section === 'personalInfo') {
       return (
@@ -143,7 +148,9 @@ class InputFormSection extends React.Component {
             value={this.props.experience.description}
             onChange={this.handleExperienceChange}
           ></textarea>
-          <button className="delete">Delete</button>
+          <button className="delete" onClick={this.deleteExperience}>
+            Delete
+          </button>
         </div>
       );
     } else if (this.props.section === 'education') {

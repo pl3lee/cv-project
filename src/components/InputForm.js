@@ -21,11 +21,12 @@ class InputForm extends React.Component {
               key={exp.id}
               id={exp.id}
               onChange={this.props.onChange.experience}
+              deleteExperience={this.props.deleteExperience}
             />
           );
         })}
         <button className="add" onClick={this.props.addExperience}>
-          Add
+          Add Experience
         </button>
         <InputFormSection section={'education'} />
         <button onClick={this.props.resetForm}>Reset</button>

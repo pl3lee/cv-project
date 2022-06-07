@@ -193,6 +193,14 @@ class Main extends React.Component {
       };
     });
   };
+  deleteExperience = (id) => {
+    this.setState((prevState) => {
+      let newExperiences = prevState.experiences.filter((exp) => exp.id !== id);
+      return { experiences: newExperiences };
+    });
+    console.log(this.state);
+    console.log(`recevied id ${id}`);
+  };
   resetForm = () => {
     this.setState(this.defaultState);
     this.setState({
@@ -210,6 +218,7 @@ class Main extends React.Component {
           personalInfo={this.state.personalInfo}
           experiences={this.state.experiences}
           addExperience={this.addExperience}
+          deleteExperience={this.deleteExperience}
           resetForm={this.resetForm}
         />
       </div>

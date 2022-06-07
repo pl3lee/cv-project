@@ -28,7 +28,21 @@ class InputForm extends React.Component {
         <button className="add" onClick={this.props.addExperience}>
           Add Experience
         </button>
-        <InputFormSection section={'education'} />
+        {this.props.education.map((ed) => {
+          return (
+            <InputFormSection
+              section={'education'}
+              education={ed}
+              key={ed.id}
+              id={ed.id}
+              onChange={this.props.onChange.education}
+              deleteEducation={this.props.deleteEducation}
+            />
+          );
+        })}
+        <button className="add" onClick={this.props.addEducation}>
+          Add Education
+        </button>
         <button onClick={this.props.resetForm}>Reset</button>
       </div>
     );

@@ -46,6 +46,29 @@ class InputFormSection extends React.Component {
     }
   };
 
+  handleEducationChange = (e) => {
+    if (e.target.placeholder === 'University Name') {
+      this.props.onChange.handleNameChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'City') {
+      this.props.onChange.handleCityChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'Country') {
+      this.props.onChange.handleCountryChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'Degree') {
+      this.props.onChange.handleDegreeChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'Major') {
+      this.props.onChange.handleMajorChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'Minor') {
+      this.props.onChange.handleMinorChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'From') {
+      this.props.onChange.handleFromChange(e.target.value, this.props.id);
+    } else if (e.target.placeholder === 'To') {
+      this.props.onChange.handleToChange(e.target.value, this.props.id);
+    }
+  };
+  deleteEducation = () => {
+    this.props.deleteEducation(this.props.id);
+    console.log(this.props.id);
+  };
   deleteExperience = () => {
     this.props.deleteExperience(this.props.id);
     console.log(this.props.id);
@@ -157,16 +180,57 @@ class InputFormSection extends React.Component {
       return (
         <div className="experience input-form-section">
           Education
-          <input placeholder="University Name" type="text"></input>
-          <input placeholder="City" type="text"></input>
-          <input placeholder="Country" type="text"></input>
-          <input placeholder="Degree" type="text"></input>
-          <input placeholder="Major" type="text"></input>
-          <input placeholder="Minor" type="text"></input>
-          <input placeholder="From" type="text"></input>
-          <input placeholder="To" type="text"></input>
-          <button className="delete">Delete</button>
-          <button className="add">Add</button>
+          <input
+            placeholder="University Name"
+            type="text"
+            value={this.props.education.name}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="City"
+            type="text"
+            value={this.props.education.city}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="Country"
+            type="text"
+            value={this.props.education.country}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="Degree"
+            type="text"
+            value={this.props.education.degree}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="Major"
+            type="text"
+            value={this.props.education.major}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="Minor"
+            type="text"
+            value={this.props.education.minor}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="From"
+            type="text"
+            value={this.props.education.from}
+            onChange={this.handleEducationChange}
+          ></input>
+          <input
+            placeholder="To"
+            type="text"
+            value={this.props.education.to}
+            onChange={this.handleEducationChange}
+          ></input>
+          <button className="delete" onClick={this.deleteEducation}>
+            Delete
+          </button>
         </div>
       );
     }

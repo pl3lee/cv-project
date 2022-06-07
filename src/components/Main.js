@@ -21,7 +21,7 @@ class Main extends React.Component {
         description: '',
       },
       experiences: [new Experience(uniqid())],
-      education: [new Education()],
+      education: [new Education(uniqid())],
     };
     this.state = this.defaultState;
   }
@@ -185,6 +185,112 @@ class Main extends React.Component {
         console.log(this.state);
       },
     },
+    education: {
+      handleNameChange: (name, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.name = name;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleCityChange: (city, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.city = city;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleCountryChange: (country, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.country = country;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleDegreeChange: (degree, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.degree = degree;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleMajorChange: (major, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.major = major;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleMinorChange: (minor, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.minor = minor;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleFromChange: (from, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.from = from;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+      handleToChange: (to, id) => {
+        this.setState((prevState) => {
+          for (let i = 0; i < prevState.education.length; i++) {
+            if (prevState.education[i].id === id) {
+              let newEdu = Object.assign({}, prevState.education[i]);
+              newEdu.to = to;
+              prevState.education[i] = newEdu;
+              return prevState;
+            }
+          }
+        });
+        console.log(this.state);
+      },
+    },
   };
   addExperience = () => {
     this.setState((prevState) => {
@@ -201,11 +307,26 @@ class Main extends React.Component {
     console.log(this.state);
     console.log(`recevied id ${id}`);
   };
+  addEducation = () => {
+    this.setState((prevState) => {
+      return {
+        education: [...prevState.education, new Education(uniqid())],
+      };
+    });
+  };
+  deleteEducation = (id) => {
+    this.setState((prevState) => {
+      let newEducation = prevState.education.filter((ed) => ed.id !== id);
+      return { education: newEducation };
+    });
+    console.log(this.state);
+    console.log(`recevied id ${id}`);
+  };
   resetForm = () => {
     this.setState(this.defaultState);
     this.setState({
       experiences: [new Experience(uniqid())],
-      education: [new Education()],
+      education: [new Education(uniqid())],
     });
     console.log(this.state);
   };
@@ -218,7 +339,10 @@ class Main extends React.Component {
           personalInfo={this.state.personalInfo}
           experiences={this.state.experiences}
           addExperience={this.addExperience}
+          education={this.state.education}
           deleteExperience={this.deleteExperience}
+          addEducation={this.addEducation}
+          deleteEducation={this.deleteEducation}
           resetForm={this.resetForm}
         />
       </div>

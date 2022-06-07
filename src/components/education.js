@@ -1,5 +1,5 @@
 class Education {
-  constructor() {
+  constructor(id) {
     this.name = '';
     this.city = '';
     this.country = '';
@@ -8,6 +8,7 @@ class Education {
     this.minor = '';
     this.from = '';
     this.to = '';
+    this.id = id;
   }
 }
 

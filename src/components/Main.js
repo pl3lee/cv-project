@@ -46,7 +46,6 @@ class Main extends React.Component {
           personalInfo.firstName = name;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handleLastNameChange: (name) => {
         this.setState((prevState) => {
@@ -54,7 +53,6 @@ class Main extends React.Component {
           personalInfo.lastName = name;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handleTitleChange: (newTitle) => {
         this.setState((prevState) => {
@@ -62,7 +60,6 @@ class Main extends React.Component {
           personalInfo.title = newTitle;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handlePhotoChange: (newPhoto) => {
         this.setState((prevState) => {
@@ -70,7 +67,6 @@ class Main extends React.Component {
           personalInfo.photo = newPhoto;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handleAddressChange: (newAddress) => {
         this.setState((prevState) => {
@@ -78,7 +74,6 @@ class Main extends React.Component {
           personalInfo.address = newAddress;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handlePhoneNumberChange: (number) => {
         this.setState((prevState) => {
@@ -86,7 +81,6 @@ class Main extends React.Component {
           personalInfo.phoneNumber = number;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handleEmailChange: (newEmail) => {
         this.setState((prevState) => {
@@ -94,7 +88,6 @@ class Main extends React.Component {
           personalInfo.email = newEmail;
           return { personalInfo };
         });
-        console.log(this.state);
       },
       handleDescriptionChange: (desc) => {
         this.setState((prevState) => {
@@ -102,7 +95,6 @@ class Main extends React.Component {
           personalInfo.description = desc;
           return { personalInfo };
         });
-        console.log(this.state);
       },
     },
     experience: {
@@ -117,7 +109,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handlePositionChange: (position, id) => {
         this.setState((prevState) => {
@@ -130,7 +121,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleCityChange: (city, id) => {
         this.setState((prevState) => {
@@ -143,7 +133,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleCountryChange: (country, id) => {
         this.setState((prevState) => {
@@ -156,7 +145,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleFromChange: (from, id) => {
         this.setState((prevState) => {
@@ -169,7 +157,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleToChange: (to, id) => {
         this.setState((prevState) => {
@@ -182,7 +169,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleDescriptionChange: (description, id) => {
         this.setState((prevState) => {
@@ -195,7 +181,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
     },
     education: {
@@ -210,7 +195,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleCityChange: (city, id) => {
         this.setState((prevState) => {
@@ -223,7 +207,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleCountryChange: (country, id) => {
         this.setState((prevState) => {
@@ -236,7 +219,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleDegreeChange: (degree, id) => {
         this.setState((prevState) => {
@@ -249,7 +231,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleMajorChange: (major, id) => {
         this.setState((prevState) => {
@@ -262,7 +243,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleMinorChange: (minor, id) => {
         this.setState((prevState) => {
@@ -275,7 +255,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleFromChange: (from, id) => {
         this.setState((prevState) => {
@@ -288,7 +267,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
       handleToChange: (to, id) => {
         this.setState((prevState) => {
@@ -301,7 +279,6 @@ class Main extends React.Component {
             }
           }
         });
-        console.log(this.state);
       },
     },
   };
@@ -317,8 +294,6 @@ class Main extends React.Component {
       let newExperiences = prevState.experiences.filter((exp) => exp.id !== id);
       return { experiences: newExperiences };
     });
-    console.log(this.state);
-    console.log(`recevied id ${id}`);
   };
   addEducation = () => {
     this.setState((prevState) => {
@@ -332,8 +307,6 @@ class Main extends React.Component {
       let newEducation = prevState.education.filter((ed) => ed.id !== id);
       return { education: newEducation };
     });
-    console.log(this.state);
-    console.log(`recevied id ${id}`);
   };
   resetForm = () => {
     this.setState(this.defaultState);
@@ -341,7 +314,6 @@ class Main extends React.Component {
     //   experiences: [new Experience(uniqid())],
     //   education: [new Education(uniqid())],
     // });
-    console.log(this.state);
   };
   loadExample = () => {
     this.setState(this.example);

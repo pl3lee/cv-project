@@ -13,4 +13,6 @@ hr {
   border: 1px solid black;
   width: 100%;
   background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
 }

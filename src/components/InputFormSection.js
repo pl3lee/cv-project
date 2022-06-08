@@ -69,11 +69,9 @@ class InputFormSection extends React.Component {
   };
   deleteEducation = () => {
     this.props.deleteEducation(this.props.id);
-    console.log(this.props.id);
   };
   deleteExperience = () => {
     this.props.deleteExperience(this.props.id);
-    console.log(this.props.id);
   };
   render() {
     if (this.props.section === 'personalInfo') {

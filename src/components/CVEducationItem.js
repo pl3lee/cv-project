@@ -10,7 +10,7 @@ class CVEducationItem extends React.Component {
         </div>
         <div className="CV-entry-details">
           <div className="CV-entry-header">
-            {this.props.education.name}{' '}
+            {this.props.education.name}
             {this.props.education.city === ''
               ? ''
               : ', ' + this.props.education.city}

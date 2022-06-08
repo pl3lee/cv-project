@@ -98,12 +98,15 @@ class InputFormSection extends React.Component {
             onChange={this.handlePersonalInfoChange}
             value={this.props.personalInfo.title}
           ></input>
-          <input
-            type="file"
-            onChange={this.handlePersonalInfoChange}
-            // value={this.props.personalInfo.photo}
-            accept="image/*"
-          ></input>
+          <label for="photo">
+            Select CV Picture
+            <input
+              type="file"
+              onChange={this.handlePersonalInfoChange}
+              accept="image/*"
+              id="photo"
+            ></input>
+          </label>
           <input
             placeholder="Address"
             type="text"

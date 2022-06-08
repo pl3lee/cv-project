@@ -1,6 +1,6 @@
 .CV-header {
   background-color: #f97316;
-  padding: 0.2in;
+  padding: 0.3in 0.2in;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -9,7 +9,11 @@
   height: 1.5in;
 }
 
-.CV-header>div.CV-name {
+.CV-header > div.CV-name {
   font-size: xx-large;
   font-weight: bold;
+}
+
+.CV-header > div {
+  color: white;
 }

@@ -1,6 +1,6 @@
 # About This Project
 
-![localhost_3000_](https://user-images.githubusercontent.com/64212628/172524487-8972d855-8ee5-4d0c-8bde-e2eec4bdb08e.png)
+![localhost_3000_cv-project](https://user-images.githubusercontent.com/64212628/172524547-7630220e-051b-4062-b1d7-0ecaea845d84.png)
 
 
 Check it out: https://pl3lee.github.io/cv-project/

@@ -1,0 +1,7 @@
+.CV-main {
+  padding: 0.2in;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2in;
+}
+

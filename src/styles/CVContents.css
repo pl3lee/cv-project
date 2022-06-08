@@ -1,0 +1,8 @@
+.CV-contents {
+  /* padding: 0.5in; */
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  gap: 0.1in;
+  grid-template-rows: 1fr;
+  flex: 1;
+}

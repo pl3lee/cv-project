@@ -1,0 +1,25 @@
+.CV-sidebar {
+  background-color: #fed7aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2in 0.2in;
+  gap: 0.5in;
+}
+
+.CV-sidebar>img {
+  height: auto;
+  width: 2in;
+}
+
+.CV-personal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2in;
+}
+
+
+.detail-name {
+  font-weight: bold;
+  font-size: large;
+}

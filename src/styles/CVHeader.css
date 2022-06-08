@@ -1,0 +1,15 @@
+.CV-header {
+  background-color: #f97316;
+  padding: 0.2in;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.1in;
+  height: 1.5in;
+}
+
+.CV-header>div.CV-name {
+  font-size: xx-large;
+  font-weight: bold;
+}

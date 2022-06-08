@@ -1,6 +1,5 @@
 .CV {
   width: 8.5in;
-  /* margin: auto; */
   background-color: #f1f5f9;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
@@ -8,68 +7,3 @@
   min-height: 11in;
 }
 
-.CV-header {
-  background-color: #f97316;
-  padding: 0.2in;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.1in;
-  height: 1.5in;
-}
-
-.CV-header > div.CV-name {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-.CV-contents {
-  /* padding: 0.5in; */
-  display: grid;
-  grid-template-columns: 5fr 2fr;
-  gap: 0.1in;
-  grid-template-rows: 1fr;
-  flex: 1;
-}
-
-.CV-sidebar {
-  background-color: #fed7aa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.2in 0.2in;
-  gap: 0.5in;
-}
-
-.CV-sidebar > img {
-  height: auto;
-  width: 2in;
-}
-
-.CV-personal-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2in;
-}
-
-
-.detail-name {
-  font-weight: bold;
-  font-size: large;
-}
-
-.CV-main {
-  padding: 0.2in;
-}
-
-.CV-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1in;
-}
-
-.CV-section-name {
-  font-weight: bold;
-  font-size: large;
-}

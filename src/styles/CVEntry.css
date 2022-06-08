@@ -1,0 +1,22 @@
+.CV-entry {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+.CV-entry-details {
+  width: 100%;
+}
+.CV-entry-header {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.CV-entry-subheader {
+  font-size: medium;
+}
+
+.CV-entry-description {
+  font-size: small;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+    word-break: break-all;
+}

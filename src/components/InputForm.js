@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/InputForm.css';
 import InputFormSection from './InputFormSection';
+
 class InputForm extends React.Component {
   render() {
     return (

@@ -5,6 +5,7 @@
   align-items: center;
   padding: 0.2in 0.2in;
   gap: 0.5in;
+  min-height: 9.5in;
 }
 
 .CV-sidebar>img {

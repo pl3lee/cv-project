@@ -5,7 +5,7 @@ import InputForm from './InputForm';
 import Experience from './experience';
 import Education from './education';
 import uniqid from 'uniqid';
-
+import ReactToPrint from 'react-to-print';
 class Main extends React.Component {
   constructor() {
     super();
@@ -361,23 +361,34 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
-        <CV
-          personalInfo={this.state.personalInfo}
-          experiences={this.state.experiences}
-          education={this.state.education}
+        <ReactToPrint
+          trigger={() => {
+            // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+            // to the root node of the returned component as it will be overwritten.
+            return <button>Print CV</button>;
+          }}
+          content={() => this.componentRef}
         />
-        <InputForm
-          onChange={this.handlers}
-          personalInfo={this.state.personalInfo}
-          experiences={this.state.experiences}
-          education={this.state.education}
-          addExperience={this.addExperience}
-          deleteExperience={this.deleteExperience}
-          addEducation={this.addEducation}
-          deleteEducation={this.deleteEducation}
-          resetForm={this.resetForm}
-          loadExample={this.loadExample}
-        />
+        <div className="container">
+          <CV
+            personalInfo={this.state.personalInfo}
+            experiences={this.state.experiences}
+            education={this.state.education}
+            ref={(el) => (this.componentRef = el)}
+          />
+          <InputForm
+            onChange={this.handlers}
+            personalInfo={this.state.personalInfo}
+            experiences={this.state.experiences}
+            education={this.state.education}
+            addExperience={this.addExperience}
+            deleteExperience={this.deleteExperience}
+            addEducation={this.addEducation}
+            deleteEducation={this.deleteEducation}
+            resetForm={this.resetForm}
+            loadExample={this.loadExample}
+          />
+        </div>
       </div>
     );
   }

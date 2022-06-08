@@ -2,9 +2,6 @@ import React from 'react';
 import '../styles/InputFormSection.css';
 
 class InputFormSection extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   handlePersonalInfoChange = (e) => {
     if (e.target.placeholder === 'First name') {
       this.props.onChange.handleFirstNameChange(e.target.value);

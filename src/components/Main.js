@@ -309,42 +309,54 @@ class Main extends React.Component {
     });
   };
   resetForm = () => {
-    this.setState(this.defaultState);
+    if (
+      window.confirm(
+        'This will delete everything! Press OK to confirm, or Cancel to cancel'
+      )
+    ) {
+      this.setState(this.defaultState);
+    }
   };
   loadExample = () => {
-    this.setState(this.example);
-    let exampleExperience1 = new Experience(uniqid());
-    exampleExperience1.company = 'Google';
-    exampleExperience1.position = 'CEO';
-    exampleExperience1.city = 'California';
-    exampleExperience1.country = 'United States';
-    exampleExperience1.from = '2019';
-    exampleExperience1.to = 'Present';
-    exampleExperience1.description =
-      'Blah blah random description of what I did.';
+    if (
+      window.confirm(
+        'This will overwrite any existing information! Press OK to confirm, or Cancel to cancel'
+      )
+    ) {
+      this.setState(this.example);
+      let exampleExperience1 = new Experience(uniqid());
+      exampleExperience1.company = 'Google';
+      exampleExperience1.position = 'CEO';
+      exampleExperience1.city = 'California';
+      exampleExperience1.country = 'United States';
+      exampleExperience1.from = '2019';
+      exampleExperience1.to = 'Present';
+      exampleExperience1.description =
+        'Blah blah random description of what I did.';
 
-    let exampleExperience2 = new Experience(uniqid());
-    exampleExperience2.company = 'Tesla';
-    exampleExperience2.position = 'CEO';
-    exampleExperience2.city = 'California';
-    exampleExperience2.country = 'United States';
-    exampleExperience2.from = '2005';
-    exampleExperience2.to = '2018';
-    exampleExperience2.description =
-      'Blah blah random description of what I did.';
-    let exampleEducation1 = new Education(uniqid());
-    exampleEducation1.name = 'University of Waterloo';
-    exampleEducation1.city = 'Waterloo';
-    exampleEducation1.country = 'Canada';
-    exampleEducation1.degree = 'Undergraduate';
-    exampleEducation1.major = 'Computational Mathematics';
-    exampleEducation1.minor = 'Computer Science';
-    exampleEducation1.from = '2020';
-    exampleEducation1.to = '2025';
-    this.setState({
-      experiences: [exampleExperience1, exampleExperience2],
-      education: [exampleEducation1],
-    });
+      let exampleExperience2 = new Experience(uniqid());
+      exampleExperience2.company = 'Tesla';
+      exampleExperience2.position = 'CEO';
+      exampleExperience2.city = 'California';
+      exampleExperience2.country = 'United States';
+      exampleExperience2.from = '2005';
+      exampleExperience2.to = '2018';
+      exampleExperience2.description =
+        'Blah blah random description of what I did.';
+      let exampleEducation1 = new Education(uniqid());
+      exampleEducation1.name = 'University of Waterloo';
+      exampleEducation1.city = 'Waterloo';
+      exampleEducation1.country = 'Canada';
+      exampleEducation1.degree = 'Undergraduate';
+      exampleEducation1.major = 'Computational Mathematics';
+      exampleEducation1.minor = 'Computer Science';
+      exampleEducation1.from = '2020';
+      exampleEducation1.to = '2025';
+      this.setState({
+        experiences: [exampleExperience1, exampleExperience2],
+        education: [exampleEducation1],
+      });
+    }
   };
   render() {
     return (

@@ -310,10 +310,6 @@ class Main extends React.Component {
   };
   resetForm = () => {
     this.setState(this.defaultState);
-    // this.setState({
-    //   experiences: [new Experience(uniqid())],
-    //   education: [new Education(uniqid())],
-    // });
   };
   loadExample = () => {
     this.setState(this.example);

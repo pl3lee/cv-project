@@ -13,8 +13,13 @@ class CVExperienceItem extends React.Component {
             {this.props.experience.position}
           </div>
           <div className="CV-entry-subheader">
-            {this.props.experience.company}, {this.props.experience.city},{' '}
-            {this.props.experience.country}
+            {this.props.experience.company}
+            {this.props.experience.city === ''
+              ? ''
+              : ', ' + this.props.experience.city}
+            {this.props.experience.country === ''
+              ? ''
+              : ', ' + this.props.experience.country}
           </div>
           <div className="CV-entry-description">
             {this.props.experience.description}

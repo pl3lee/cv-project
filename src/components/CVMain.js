@@ -9,7 +9,16 @@ class CVMain extends React.Component {
           contents={this.props.personalInfo.description}
           type="description"
         />
-        <CVSection contents={this.props.experiences} type="experiences" />
+        {this.props.experiences.length === 0 ? (
+          ''
+        ) : (
+          <CVSection contents={this.props.experiences} type="experiences" />
+        )}
+        {this.props.education.length === 0 ? (
+          ''
+        ) : (
+          <CVSection contents={this.props.education} type="education" />
+        )}
       </div>
     );
   }

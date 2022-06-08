@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/CVSection.css';
 import CVExperienceItem from './CVExperienceItem';
+import CVEducationItem from './CVEducationItem';
 import uniqid from 'uniqid';
 class CVSection extends React.Component {
   render() {
@@ -13,6 +14,11 @@ class CVSection extends React.Component {
       header = 'Experiences';
       sectionContents = this.props.contents.map((exp) => {
         return <CVExperienceItem key={uniqid()} experience={exp} />;
+      });
+    } else if (this.props.type === 'education') {
+      header = 'Education';
+      sectionContents = this.props.contents.map((edu) => {
+        return <CVEducationItem key={uniqid()} education={edu} />;
       });
     }
     return (

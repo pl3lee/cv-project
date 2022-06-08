@@ -4,16 +4,15 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  padding-top: 50px;
+  padding: 50px;
   background-color: #cbd5e1;
-  /* padding: 1vw; */
 }
 
 .container {
   display: flex;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 20px;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 10px;
 }
 .main > button {
   height: 35px;
@@ -21,5 +20,5 @@
   font-weight: bold;
   color: white;
   background-color: blue;
-  width: 80%;
+  width: 100%;
 }
